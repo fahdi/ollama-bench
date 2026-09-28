@@ -1,0 +1,10 @@
+PASS order preserved
+PASS concurrency reaches limit=3 exactly
+PASS limit=1 is sequential
+PASS retry then succeed
+PASS exhausted retries -> last exception returned
+PASS retries=0 means one attempt
+PASS one failure doesn't affect others
+PASS duplicate urls fetched independently
+PASS empty list
+PASS limit < 1 -> ValueError

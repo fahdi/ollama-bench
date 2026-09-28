@@ -1,0 +1,11 @@
+PASS basic fields
+PASS query string stripped
+PASS time aware and correct
+PASS +0500 offset kept
+PASS same instant across zones
+PASS bytes '-' -> 0, named user, UA with spaces
+PASS malformed -> None
+PASS top n with tie-break by path
+PASS default n=3 and 4xx ignored
+PASS n larger than data
+PASS accepts a generator

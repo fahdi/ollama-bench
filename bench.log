@@ -1,0 +1,22 @@
+
+=== gemma4:26b ===
+ctx   8192:  79.6 tok/s gen,  191.8 tok/s prompt, load 40.3s, 100% GPU, 1.1 GB loaded
+ctx  16384:  81.9 tok/s gen,  192.7 tok/s prompt, load 50.3s, 100% GPU, 1.1 GB loaded
+ctx  32768:  82.0 tok/s gen,  207.2 tok/s prompt, load  8.8s, 100% GPU, 1.2 GB loaded
+ctx  65536:  77.2 tok/s gen,  157.2 tok/s prompt, load 11.3s, 100% GPU, 1.4 GB loaded
+task parse_duration  PASS (60.1s)
+task lru_cache       PASS (25.6s)
+task fix_bug         PASS (33.3s)
+task topo_sort       FAIL (336.7s)  NameError: name 'build_order' is not defined
+score: 3/4
+
+=== qwen3-coder:30b ===
+ctx   8192:  85.6 tok/s gen,   89.8 tok/s prompt, load 12.3s, 100% GPU, 19.3 GB loaded
+ctx  16384:  81.1 tok/s gen,  271.9 tok/s prompt, load 11.1s, 100% GPU, 20.1 GB loaded
+ctx  32768:  86.4 tok/s gen,  231.5 tok/s prompt, load  4.7s, 100% GPU, 21.8 GB loaded
+ctx  65536:  66.4 tok/s gen,  265.8 tok/s prompt, load  3.7s, not loaded
+task parse_duration  PASS (483.4s)
+task lru_cache       PASS (4.2s)
+task fix_bug         PASS (2.8s)
+task topo_sort       PASS (4.2s)
+score: 4/4

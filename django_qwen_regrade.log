@@ -1,0 +1,40 @@
+
+=== qwen3-coder:30b (Django + Docker task, re-graded from saved reply) ===
+files written (15): requirements.txt, Dockerfile, docker-compose.yml, manage.py, config/__init__.py, config/settings.py, config/urls.py, config/wsgi.py, todo/__init__.py, todo/apps.py, todo/models.py, todo/views.py, todo/urls.py, todo/admin.py, todo/migrations/__init__.py
+docker build: OK
+server up: NO (180s timeout)
+  web-1  |   File "/usr/local/lib/python3.12/site-packages/django/db/migrations/serializer.py", line 51, in serialize
+  web-1  |     item_string, item_imports = serializer_factory(item).serialize()
+  web-1  |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  web-1  |   File "/usr/local/lib/python3.12/site-packages/django/db/migrations/serializer.py", line 240, in serialize
+  web-1  |     return self.serialize_deconstructed(path, args, kwargs)
+  web-1  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  web-1  |   File "/usr/local/lib/python3.12/site-packages/django/db/migrations/serializer.py", line 105, in serialize_deconstructed
+  web-1  |     arg_string, arg_imports = serializer_factory(arg).serialize()
+  web-1  |                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  web-1  |   File "/usr/local/lib/python3.12/site-packages/django/db/migrations/serializer.py", line 51, in serialize
+  web-1  |     item_string, item_imports = serializer_factory(item).serialize()
+  web-1  |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  web-1  |   File "/usr/local/lib/python3.12/site-packages/django/db/migrations/serializer.py", line 185, in serialize
+  web-1  |     raise ValueError("Cannot serialize function: lambda")
+  web-1  | ValueError: Cannot serialize function: lambda
+  FAIL  health 200 + db true
+  FAIL  create project 201
+  FAIL  duplicate project 400 + error
+  FAIL  blank project name 400
+  FAIL  invalid JSON 400
+  FAIL  create task 201 + shape
+  FAIL  due_date round-trips
+  FAIL  priority out of range 400
+  FAIL  bad date 400
+  FAIL  blank title 400
+  FAIL  task on missing project 404
+  FAIL  list ordered priority desc
+  FAIL  patch done 200
+  FAIL  filter done=true
+  FAIL  filter done=false
+  FAIL  project list sorted + task_count
+  FAIL  delete 204
+  FAIL  delete missing 404
+  FAIL  wrong method 405
+score: 0/19

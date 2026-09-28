@@ -1,0 +1,8 @@
+{"model": "gemma4:26b", "scenario": "py_nginx_logs", "arm": "one-shot", "passed": 11, "total": 11, "tokens": 779, "wall": 41.9, "turns": 1, "failed": []}
+{"model": "gemma4:26b", "scenario": "py_nginx_logs", "arm": "tests-first prompt", "passed": 11, "total": 11, "tokens": 2225, "wall": 37.3, "turns": 1, "failed": []}
+{"model": "gemma4:26b", "scenario": "py_nginx_logs", "arm": "TDD loop", "passed": 11, "total": 11, "tokens": 2550, "wall": 50.6, "turns": 2, "red_first": true, "own_tests_green": true, "fix_rounds": 0, "failed": []}
+{"model": "gemma4:26b", "scenario": "py_async_fetch", "arm": "one-shot", "passed": 10, "total": 10, "tokens": 539, "wall": 10.7, "turns": 1, "failed": []}
+{"model": "gemma4:26b", "scenario": "py_async_fetch", "arm": "tests-first prompt", "passed": 10, "total": 10, "tokens": 1287, "wall": 23.1, "turns": 1, "failed": []}
+{"model": "gemma4:26b", "scenario": "py_async_fetch", "arm": "TDD loop", "passed": 10, "total": 10, "tokens": 1514, "wall": 32.8, "turns": 2, "red_first": true, "own_tests_green": true, "fix_rounds": 0, "failed": []}
+{"model": "gemma4:26b", "scenario": "py_refactor_invoice", "arm": "one-shot", "passed": 13, "total": 13, "tokens": 492, "wall": 10.0, "turns": 1, "failed": []}
+{"model": "gemma4:26b", "scenario": "py_refactor_invoice", "arm": "tests-first prompt", "passed": 13, "total": 13, "tokens": 1539, "wall": 26.8, "turns": 1, "failed": []}

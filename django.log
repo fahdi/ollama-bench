@@ -1,0 +1,48 @@
+
+=== gemma4:26b (Django + Docker task) ===
+generated 16000 tokens in 382s (48.4 tok/s), done_reason=length
+files written (0): 
+docker build: FAILED
+  no configuration file provided: not found
+score: build failed (0 checks run)
+
+=== qwen3-coder:30b (Django + Docker task) ===
+generated 2883 tokens in 101s (33.8 tok/s), done_reason=stop
+files written (12): requirements.txt, Dockerfile, docker-compose.yml, manage.py, config/__init__.py, config/urls.py, config/wsgi.py, todo/__init__.py, todo/models.py, todo/views.py, todo/urls.py, todo/admin.py
+docker build: OK
+server up: NO (180s timeout)
+  web-1  |   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  web-1  |   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  web-1  |   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  web-1  |   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  web-1  |   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  web-1  |   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  web-1  |   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  web-1  |   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  web-1  |   File "<frozen importlib._bootstrap_external>", line 1133, in get_code
+  web-1  |   File "<frozen importlib._bootstrap_external>", line 1063, in source_to_code
+  web-1  |   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  web-1  |   File "/app/config/__init__.py", line 1
+  web-1  |     ```
+  web-1  |     ^
+  web-1  | SyntaxError: invalid syntax
+  FAIL  health 200 + db true
+  FAIL  create project 201
+  FAIL  duplicate project 400 + error
+  FAIL  blank project name 400
+  FAIL  invalid JSON 400
+  FAIL  create task 201 + shape
+  FAIL  due_date round-trips
+  FAIL  priority out of range 400
+  FAIL  bad date 400
+  FAIL  blank title 400
+  FAIL  task on missing project 404
+  FAIL  list ordered priority desc
+  FAIL  patch done 200
+  FAIL  filter done=true
+  FAIL  filter done=false
+  FAIL  project list sorted + task_count
+  FAIL  delete 204
+  FAIL  delete missing 404
+  FAIL  wrong method 405
+score: 0/19

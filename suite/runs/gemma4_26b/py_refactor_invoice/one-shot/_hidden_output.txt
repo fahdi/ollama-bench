@@ -1,0 +1,13 @@
+PASS US no coupon
+PASS SAVE10 taxed after discount
+PASS PK SAVE10
+PASS FLAT5 US
+PASS FLAT5 floors at 0
+PASS unknown country no tax
+PASS qty <= 0 ignored
+PASS unknown coupon ValueError
+PASS empty string coupon = none
+PASS half-up rounding (0.125 -> 0.13)
+PASS no float drift
+PASS returns float
+PASS empty items
