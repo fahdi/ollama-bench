@@ -1,0 +1,21 @@
+Reference solutions (must be 100%):
+OK  py_nginx_logs                      11/11 
+OK  py_async_fetch                     10/10 
+OK  py_refactor_invoice                13/13 
+OK  py_tz_bugfix                       10/10 
+OK  php_wp_query                       15/15 
+OK  ts_cart_reducer                    16/16 
+OK  rust_semver                        14/14 
+OK  py_bank_csv                         9/9  
+
+Negative control (wrong solution must fail):
+OK  py_refactor_invoice, returns 0.0    3/13 
+
+Direct graders (fake model answers):
+OK  sql reference                       7/7  
+OK  sql wrong (COUNT(*), no dates)      2/7  
+OK  bash reference                      6/6  
+OK  long-context reference              4/4  
+OK  long-context decoy answers          0/4  
+
+ALL GRADERS VALID

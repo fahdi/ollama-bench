@@ -1,0 +1,7 @@
+# gemma4:26b small tasks with think=false, 16K context, temperature 0 (run 2026-09-28 ~05:05 PKT).
+# Run inline before bench.py had --nothink; output copied verbatim. Reproduce: python3 bench.py gemma4:26b --nothink
+gemma4 no-think parse_duration  PASS (35.3s, 265 tok)
+gemma4 no-think lru_cache       PASS (18.9s, 1259 tok)
+gemma4 no-think fix_bug         PASS (2.5s, 157 tok)
+gemma4 no-think topo_sort       PASS (6.6s, 448 tok)
+score: 4/4

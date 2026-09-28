@@ -1,5 +1,6 @@
 """Benchmark Ollama coding models: speed at several context sizes, GPU/CPU split, and correctness on small verified tasks."""
 import json, re, subprocess, sys, time, urllib.request
+from pathlib import Path
 
 API = "http://localhost:11434/api"
 
@@ -9,9 +10,11 @@ def call(path, body=None):
     with urllib.request.urlopen(req, timeout=1800) as r:
         return json.loads(r.read())
 
+THINK = {"think": False} if "--nothink" in sys.argv else {}
+
 def chat(model, prompt, num_ctx):
     t = time.time()
-    r = call("chat", {"model": model, "stream": False, "keep_alive": "10m",
+    r = call("chat", {"model": model, "stream": False, "keep_alive": "10m", **THINK,
                       "options": {"num_ctx": num_ctx, "temperature": 0},
                       "messages": [{"role": "user", "content": prompt}]})
     r["wall"] = time.time() - t
@@ -91,10 +94,13 @@ def bench(model):
     for name, prompt, test in TASKS:
         r = chat(model, prompt, 16384)
         ok, err = run_task(r["message"]["content"], test)
+        (Path(__file__).parent / "bench_responses").mkdir(exist_ok=True)
+        (Path(__file__).parent / "bench_responses" / f"{model.replace(':', '_')}{'_nothink' if THINK else ''}_{name}.md").write_text(r["message"]["content"])
         passed += ok
         print(f"task {name:15} {'PASS' if ok else 'FAIL'} ({r['wall']:.1f}s){'' if ok else '  ' + err}", flush=True)
     print(f"score: {passed}/{len(TASKS)}", flush=True)
     unload(model)
 
-for m in sys.argv[1:]:
+# usage: bench.py MODEL [MODEL ...] [--nothink]
+for m in [a for a in sys.argv[1:] if not a.startswith("--")]:
     bench(m)
