@@ -1,6 +1,6 @@
 # ollama-bench
 
-Full results and analysis: [RESULTS.md](RESULTS.md).
+Full results and analysis: [RESULTS.md](RESULTS.md). Picking this up again: [HANDOFF.md](HANDOFF.md).
 
 Local coding-model benchmarks for this Mac (M2 Max, 32 GB). Models tested: `gemma4:26b` (with `think: false`) and `qwen3-coder:30b`.
 
